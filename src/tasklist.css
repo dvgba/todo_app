@@ -1,0 +1,64 @@
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.task-table th,
+.task-table td {
+    border: 2px solid black;
+    padding: 12px;
+    text-align: center;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    vertical-align: middle;
+}
+
+.task-table th {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.task-table tr:hover {
+    
+    background-color: #575757;
+    color: #f0f0f0;
+}
+
+.priority-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px; 
+    margin-right: 4px;
+}
+
+.priority-dot.priority-low {
+    background-color: #6ac259;
+}
+
+.priority-dot.priority-medium {
+    background-color: #fdbc40;
+}
+
+.priority-dot.priority-high {
+    background-color: #ff5c5c;
+}
+
+.task-cell {
+    width: 70%;
+}
+
+.task-header {
+    width: 80%;
+    
+}
+
+.header-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}

@@ -1,0 +1,38 @@
+.task-form {
+    background-color: aquamarine;
+    border-radius: 8px;
+    box-shadow: 0 2px 4x #111;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-form input,
+.task-form select {
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.task-form button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+    background-color: rgb(92, 92, 92);
+}
+
+.button-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
