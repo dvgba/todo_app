@@ -17,3 +17,35 @@
   font-size: 32px;
   vertical-align: middle;
 }
+
+.deleted-tasks-list {
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.deleted-task-item {
+  border: 2px solid black;
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.deleted-task-item:hover {
+  background-color: #575757;
+  color: #f0f0f0;
+}
+
+.task-name {
+  font-weight: bold;
+  margin-bottom: 5px; 
+}
+
+.created-time,
+.deleted-time {
+  font-style: italic;
+  font-size: 14px; 
+  
+}
