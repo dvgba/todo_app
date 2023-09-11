@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import Taskform from './taskform';
@@ -11,6 +11,23 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
+  const deleteTask = (index) => {
+    const updateTasks = [...tasks];
+    updateTasks.splice(index, 1);
+    setTasks(updateTasks);
+  }
+
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (storedTasks) {
+      setTasks(storedTasks);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
   return (
     <div className = "app">
       <h1 className = "app-title">
@@ -18,7 +35,7 @@ function App() {
       </h1>
       <Taskform addTask = {addTask} />
       <div className = "tasklist-container">
-        <TaskList tasks = {tasks} />
+        <TaskList tasks = {tasks} onDeleteTask = {deleteTask}/>
       </div>
     </div>
   );

@@ -2,12 +2,16 @@ import React from 'react'
 import './tasklist.css';
 import { AiOutlineFileText, AiFillExclamationCircle } from 'react-icons/ai';
 
-function TaskList ({ tasks }) {
+function TaskList ({ tasks, onDeleteTask }) {
     const priorityLabels = {
         low: 'Baixa',
         medium: 'Média',
         high: 'Alta'
     };
+
+    const handleDeleteTask = (index) => {
+        onDeleteTask(index)
+    }
 
     return (
         <table className = "task-table">
@@ -17,7 +21,10 @@ function TaskList ({ tasks }) {
                         <AiOutlineFileText className = "header-icon" /> Tarefa
                     </th>
                     <th className = "task-header">
-                        <AiFillExclamationCircle className = "header-icon" /> Tarefa
+                        <AiFillExclamationCircle className = "header-icon" /> Prioridade
+                    </th>
+                    <th className = "task-header">
+                        <AiFillExclamationCircle className = "header-icon" /> Excluir?
                     </th>
                 </tr>
             </thead>
@@ -28,6 +35,9 @@ function TaskList ({ tasks }) {
                         <td>
                             <span className = {`priority-dot priority-${task.priority}`} />
                             {priorityLabels[task.priority]}
+                        </td>
+                        <td>
+                            <button className = "delete-button" onClick = { () => handleDeleteTask(index)}>Excluir</button>
                         </td>
                     </tr>
                 ))}
