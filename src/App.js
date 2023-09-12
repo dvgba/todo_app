@@ -7,13 +7,13 @@ import TaskList from './tasklist';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [deletedTasks, setDeletedTasks] = useState([]);
-
+// Adicionar Atividade
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
     const createdTime = new Date();
     newTask.createdTime = createdTime;
   };
-
+// Deletar atividade
   const deleteTask = (index) => {
     const deletedTask = tasks[index];
     const updatedTasks = [...tasks];
@@ -23,7 +23,7 @@ function App() {
     const deletedTime = new Date();
     deletedTask.deletedTime = deletedTime;
   };
-
+// Persistência das atividades, adicionadas e deletadas
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks'));
     if (storedTasks) {
@@ -43,7 +43,8 @@ function App() {
   useEffect(() => {
     localStorage.setItem('deletedTasks', JSON.stringify(deletedTasks));
   }, [deletedTasks]);
-
+  
+// HTML
   return (
     <div className="app">
       <h1 className="app-title">
